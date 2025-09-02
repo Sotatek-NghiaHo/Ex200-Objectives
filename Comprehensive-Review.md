@@ -23,13 +23,13 @@ This command prepares your environment and ensures that all required resources a
 - Create three empty files called grade1, grade2, and grade3, in the `/home/student/grading` directory.
 - Capture the first five lines of the` /home/student/bin/manage` file in the` /home/student/grading/review.txt file`.
 - Append the last three lines of the /home/student/bin/manage file to the /home/student/grading/review.txt file. Do not overwrite any existing text in the /home/student/grading/review.txt file.
-- Copy the /home/student/grading/review.txt file to the /home/student/grading/review-copy.txt file.
-- Edit the /home/student/grading/review-copy.txt file so that the Test JJ line appears twice.
-- Edit the /home/student/grading/review-copy.txt file to remove the Test HH line.
-- Edit the /home/student/grading/review-copy.txt file so that a line with A new line exists between the Test BB line and the Test CC line.
-- Create the /home/student/hardcopy hard link to the /home/student/grading/grade1 file. You must create the hard link after completing the earlier step to create the /home/student/grading/grade1 file.
-- Create the /home/student/softcopy symbolic link to the /home/student/grading/grade2 file.
-- Save the output of a command that lists the contents of the /boot directory to the /home/student/grading/longlisting.txt file. The output should be a "long listing" that includes file permissions, owner and group owner, size, and modification date of each file. The output should omit hidden files.
+- Copy the /home/student/grading/review.txt file to the `/home/student/grading/review-copy.txt` file.
+- Edit the `/home/student/grading/review-copy.txt` file so that the Test JJ line appears twice.
+- Edit the `/home/student/grading/review-copy.txt` file to remove the Test HH line.
+- Edit the `/home/student/grading/review-copy.txt` file so that a line with A new line exists between the Test BB line and the Test CC line.
+- Create the `/home/student/hardcopy` hard link to the `/home/student/grading/grade1 file`. You must create the hard link after completing the earlier step to create the `/home/student/grading/grade1` file.
+- Create the `/home/student/softcopy` symbolic link to the `/home/student/grading/grade2` file.
+- Save the output of a command that lists the contents of the /boot directory to the `/home/student/grading/longlisting.txt` file. The output should be a "long listing" that includes file permissions, owner and group owner, size, and modification date of each file. The output should omit hidden files.
 
 End
 ```bash
