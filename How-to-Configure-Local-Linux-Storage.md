@@ -1,12 +1,9 @@
 # Task 1: Set Up LVM on node1
 
-Create a logical volume named devops_lv with 32 extents using the /dev/vdb disk.
-
-This should be created from a volume group named devops_vg with 20MB physical extents.
-
-Format the logical volume as an ext4 filesystem and mount it persistently at /mnt/devops_lv.
-
-Check your work.
+- Create a logical volume named `devops_lv` with 32 extents using the `/dev/vdb` disk.
+- This should be created from a volume group named `devops_vg` with 20MB physical extents.
+- Format the logical volume as an ext4 filesystem and mount it persistently at `/mnt/devops_lv`.
+- Check your work.
 
 ```bash
 [root@redhat9-server-1 ~]# echo $((32*20))
@@ -52,8 +49,8 @@ WARNING: xfs signature detected on /dev/nvme0n2p1 at offset 0. Wipe it? [y/n]: y
 ```
 Note:   
 📌 Tại sao có cảnh báo?
-- Khi bạn chạy pvcreate /dev/nvme0n2p1, bạn muốn biến phân vùng này thành Physical Volume (PV) để dùng cho LVM.
-- Nhưng hệ thống phát hiện trên /dev/nvme0n2p1 đang có dấu vết (signature) của XFS filesystem (nghĩa là phân vùng này trước đó đã được format làm XFS).
+- Khi bạn chạy `pvcreate /dev/nvme0n2p1`, bạn muốn biến phân vùng này thành Physical Volume (PV) để dùng cho LVM.
+- Nhưng hệ thống phát hiện trên `/dev/nvme0n2p1` đang có dấu vết (signature) của XFS filesystem (nghĩa là phân vùng này trước đó đã được format làm XFS).
 - Nếu bạn ghi đè (wipe) thì dữ liệu cũ sẽ mất, và phân vùng này sẽ trở thành PV sạch để dùng cho LVM.
 
 ```bash
@@ -81,8 +78,8 @@ Note:
   VG UUID               UF1qfl-Xvt4-wqpA-Lvo3-1zgp-iw03-TM90vK
 ```
 Vì sao bạn tạo 512 MiB partition nhưng VG chỉ có 500 MiB?
-- Phân vùng /dev/nvme0n2p1 của bạn có 512 MiB.
-- Khi bạn chạy pvcreate /dev/nvme0n2p1, LVM sẽ đặt metadata ở đầu và/hoặc cuối PV để lưu thông tin (VG name, UUID, PE size, …).
+- Phân vùng `/dev/nvme0n2p1` của bạn có 512 MiB.
+- Khi bạn chạy pvcreate `/dev/nvme0n2p1`, LVM sẽ đặt metadata ở đầu và/hoặc cuối PV để lưu thông tin (VG name, UUID, PE size, …).
 - Metadata này chiếm một phần dung lượng (~12 MiB trong trường hợp của bạn).
 - Vì vậy dung lượng usable cho VG nhỏ hơn tổng partition.
 
@@ -235,7 +232,7 @@ mount: (hint) your fstab has been modified, but systemd still uses
 
 # Task 2: Create and Mount Swap volume persistently
 
-From /dev/vdb, create a 800MB swap partition and configure it to mount persistently.
+From `/dev/vdb`, create a 800MB swap partition and configure it to mount persistently.
 
 All your changes must persist after a reboot.
 
