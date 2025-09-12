@@ -24,7 +24,7 @@ http://content.example.com/rhel9.0/x86_64/rhcsa-practice/rht
 ```bash
 vi /etc/yum.repos.d/local.repo
 [BaseOS]
-name-BaseOS
+name=BaseOS
 baseurl=http://content.example.com/rhel9.0/x86_64/rhcsa-practice/rht
 gpgcheck=0
 enabled=1
