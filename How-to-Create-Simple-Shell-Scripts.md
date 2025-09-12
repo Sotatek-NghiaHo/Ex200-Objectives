@@ -239,8 +239,41 @@ chmod 755 -R /script-user/
 chmod +x /script-user/script2.sh
 /script-user/script2.sh
 ```
+Nghĩa là:
+- 7 (rwx): owner đọc/ghi/chạy được
+- 5 (r-x): group đọc/chạy được
+- 5 (r-x): others đọc/chạy được
 
-Kết quả ví dụ (nếu bạn đang ở user production5):
+Kết quả ví dụ (nếu bạn đang ở user `production5`):
 ```
 hello production5
+```
+
+Trong shell script, `$0` là một biến đặc biệt.
+
+Nó chứa tên của script đang được chạy.
+
+Nếu bạn gọi script bằng `./script1.sh nghihv` thì:
+- $0 = ./script1.sh
+- $1 = nghihv (argument đầu tiên)
+- $2 = argument thứ 2 (nếu có), v.v…
+
+Ví dụ script nhỏ:
+```
+#!/bin/bash
+echo "Ten script: $0"
+echo "Argument 1: $1"
+echo "Argument 2: $2"
+```
+
+Chạy:
+```
+./myscript.sh hello world
+```
+
+Kết quả:
+```
+Ten script: ./myscript.sh
+Argument 1: hello
+Argument 2: world
 ```
