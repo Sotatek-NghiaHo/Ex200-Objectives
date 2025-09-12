@@ -22,7 +22,7 @@ This command prepares your environment and ensures that all required resources a
 - Create the `/home/student/grading` directory.
 - Create three empty files called grade1, grade2, and grade3, in the `/home/student/grading` directory.
 - Capture the first five lines of the` /home/student/bin/manage` file in the` /home/student/grading/review.txt file`.
-- Append the last three lines of the /home/student/bin/manage file to the /home/student/grading/review.txt file. Do not overwrite any existing text in the /home/student/grading/review.txt file.
+- Append the last three lines of the` /home/student/bin/manage` file to the `/home/student/grading/review.txt` file. Do not overwrite any existing text in the `/home/student/grading/review.txt` file.
 - Copy the /home/student/grading/review.txt file to the `/home/student/grading/review-copy.txt` file.
 - Edit the `/home/student/grading/review-copy.txt` file so that the Test JJ line appears twice.
 - Edit the `/home/student/grading/review-copy.txt` file to remove the Test HH line.
@@ -66,9 +66,9 @@ This command prepares your environment and ensures that all required resources a
 - Set the password expiration to 30 days since the day of the last password change.
 - Allow the user to use the sudo command to run any command as the superuser.
 - Configure the default umask as 007 for the dbadmin1 user.
-- Create the /home/dbadmin1/grading/review2 directory with dbadmin1 as the owning user and the database group as the owning group.
-- Configure the /home/dbadmin1/grading/review2 directory so that the database group owns any file or sub-directory that is created in this directory, irrespective of which user created the file. Configure the permissions on the directory to allow members of the database group to access the directory and to create contents in it. All other users should have read and execute permissions on the directory.
-- Ensure that users are allowed to delete only files that they own from the /home/dbadmin1/grading/review2 directory.
+- Create the `/home/dbadmin1/grading/review2` directory with dbadmin1 as the owning user and the database group as the owning group.
+- Configure the `/home/dbadmin1/grading/review2` directory so that the database group owns any file or sub-directory that is created in this directory, irrespective of which user created the file. Configure the permissions on the directory to allow members of the database group to access the directory and to create contents in it. All other users should have read and execute permissions on the directory.
+- Ensure that users are allowed to delete only files that they own from the `/home/dbadmin1/grading/review2` directory.
 
 ```bash
 [student@workstation ~]$ lab grade rhcsa-rh124-review2
