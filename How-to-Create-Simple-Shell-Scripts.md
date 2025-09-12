@@ -277,3 +277,19 @@ Ten script: ./myscript.sh
 Argument 1: hello
 Argument 2: world
 ```
+
+OR
+```bash
+#!/bin/bash
+# script2.sh
+
+current_user=$(whoami)
+
+if [ "$current_user" = "nghiahv" ]; then
+    echo "hello nghiahv"
+elif [ "$current_user" = "lanit" ]; then
+    echo "hello lanit"
+else
+    echo "hello $current_user"
+fi
+```
