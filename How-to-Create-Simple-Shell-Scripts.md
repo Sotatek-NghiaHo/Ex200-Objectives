@@ -177,3 +177,70 @@ do
 	echo Password@1 | passwd --stdin $user
 done
 ```
+
+
+---
+Create the consultant1, consultant2, and consultant3 users with the consultants group as their supplementary group.
+
+```bash
+for user in consultant{1..3}; do useradd G consultants $user; done
+``` 
+
+![alt text](pic/3.png)
+
+![alt text](pic/4.png)
+
+![alt text](pic/5.png)
+
+
+---
+
+# Bài 1: Script nhận argument (file sh + user)
+
+👉 Yêu cầu: chạy `./script.sh nghihv` thì in ra `hello nghihv`.
+```
+#!/bin/bash
+# script1.sh
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <username>"
+    exit 1
+fi
+
+echo "hello $1"
+```
+
+📌 Cách chạy:
+```
+chmod +x script1.sh 
+
+./script1.sh nghihv
+```
+
+Kết quả:
+```
+hello nghihv
+```
+# Bài 2: Script in ra tên user đang chạy
+
+👉 Yêu cầu: nếu `su - user2` rồi chạy `./script2.sh` thì in ra `hello user2`.  
+`vi /script-user/script2.sh`
+```
+#!/bin/bash
+# script2.sh
+
+current_user=$(whoami)
+echo "hello $current_user"
+```
+
+📌 Cách chạy:
+```
+chmod 755 -R /script-user/
+chmod +x /script-user/script2.sh
+/script-user/script2.sh
+```
+
+Kết quả ví dụ (nếu bạn đang ở user production5):
+```
+hello production5
+```
